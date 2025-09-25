@@ -5,7 +5,8 @@ class BaseError extends Error{
         this.name=name;
         this.statusCode=statusCode;
         this.details=details;
-       
+        
+        
      }
 }
 module.exports=BaseError;
