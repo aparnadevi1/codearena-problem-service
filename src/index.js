@@ -7,7 +7,7 @@ const mongoose=require("mongoose");
 const errorHandler = require("./utils/errorHandler");
 const connectToDB = require("./config/db.config");
 const app=express();
-
+//const {problem}=require('./models/problem.model')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));//extended: true -uses qs library which is recomended
@@ -27,7 +27,7 @@ app.listen(PORT,async()=>{
     await connectToDB();
     console.log("Successfully connected to DB");
 
-
+    
 
     // try{
        
