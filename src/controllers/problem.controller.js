@@ -24,7 +24,7 @@ async function addProblem(req,res,next)
         next(error);
     }
 }
-function getProblem(req,res)
+async function getProblem(req,res,next)
 {
     try{
            throw new NotImplemented('getProblem');
@@ -34,17 +34,23 @@ function getProblem(req,res)
         next(error);
     }
 }
-function getProblems(req,res)
+async function getProblems(req,res,next)
 {
     try{
-           throw new NotImplemented('getProblems');
+        const response=await problemService.getAllProblems();
+        return res.status(StatusCodes.OK).json({
+             success:true,
+            message:"Successfully fetched all the problems",
+            error:{},
+            data:response
+        });
     }
     catch(error)
     {
         next(error);
     }
 }
-function deleteProblem(req,res)
+function deleteProblem(req,res,next)
 {
    try{
            throw new NotImplemented('deleteProblem');
@@ -54,7 +60,7 @@ function deleteProblem(req,res)
         next(error);
     }
 }
-function updateProblem(req,res)
+function updateProblem(req,res,next)
 {
       try{
            throw new NotImplemented('updateProblem');
