@@ -1,6 +1,5 @@
 const {StatusCodes}=require("http-status-codes");
 const NotImplemented = require("../errors/notImplemented.error");
-const BadRequest = require("../errors/badRequest.error");
 function pingProblemController(req,res)
 {
     return res.json({message:'Problem controller is up'});
@@ -8,7 +7,7 @@ function pingProblemController(req,res)
 function addProblem(req,res,next)
 {
     try{
-           throw new BadRequest('Problem Name',{missing:["Problem Name"]});
+           throw new NotImplemented('addProblem');
     }
     catch(error)
     {

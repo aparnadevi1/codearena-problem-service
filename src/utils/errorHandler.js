@@ -1,5 +1,7 @@
 const BaseError = require("../errors/base.error");
 const { StatusCodes } = require("http-status-codes");
+
+//four params represets a error handler
 function errorHandler(err,req,res,next)
 {
     if(err instanceof BaseError)
@@ -10,7 +12,7 @@ function errorHandler(err,req,res,next)
             error:err.details,
             data:{}
         });
-    }
+    }//if we didnot implement the type error then this will be called
      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
             success:false,
             message:'Something went wrong',
