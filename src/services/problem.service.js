@@ -9,9 +9,9 @@ class ProblemService{
      {          
           //1.Sanitize the markdown fro description
         problemData.description=sanitizeMarkdownContent(problemData.description);
-        console.log("problemData",problemData);
+ //       console.log("problemData",problemData);
         const problem=await this.problemRepository.createProblem(problemData);
-        console.log("problem",problem);
+//        console.log("problem",problem);
         return problem;      
      }
      async getAllProblems()
