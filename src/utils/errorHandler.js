@@ -15,7 +15,7 @@ function errorHandler(err,req,res,next)
     }//if we didnot implement the type error then this will be called
      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
             success:false,
-            message:'Something went wrong',
+            message:'Somethingg went wrong',
             error:err,
             data:{}
         });
